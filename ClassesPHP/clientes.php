@@ -1,6 +1,6 @@
 <?php
 class Clientes {
-    private $id_cli;
+    private $codigo_cliente;
     private $nome;
     private $endereco;
     private $cidade;
@@ -8,38 +8,54 @@ class Clientes {
     private $uf;
     private $pais;
     private $telefone;
+    private $fax;
   
     public function __construct($nome, $endereco, $cidade, $cep, $uf, $pais, $telefone) {
-        $this->nome = $nome;
-        $this->endereco = $endereco;
-        $this->cidade = $cidade;
-        $this->cep = $cep;
-        $this->uf = $uf;
-        $this->pais = $pais;
-        $this->telefone = $telefone;
+        $this->Nome = $nome;
+        $this->Endereco = $endereco;
+        $this->Cidade = $cidade;
+        $this->CEP = $cep;
+        $this->UF = $uf;
+        $this->Pais = $pais;
+        $this->Telefone = $telefone;
     }
     // SET: Mipula o atributo e insere o valor dentro dele.
     // GET: Retorna algo.
-    function set_nome($nome) {
-        $this->nome = $nome;
+    public function set_nome($nome) {
+        $this->Nome = $nome;
     }
-    function set_endereco($endereco) {
-        $this->endereco = $endereco;
+    public function get_nome() {
+        return $this->nome;
     }
-    function set_cidade($cidade) {
-        $this->cidade = $cidade;
+    public function set_endereco($endereco) {
+        $this->Endereco = $endereco;
     }
-    function set_cep($cep) {
-        $this->cep = $cep;
+    public function get_endereco() {
+        return $this->endereco;
     }
-    function set_uf($uf) {
-        $this->uf = $uf;
+    public function set_cidade($cidade) {
+        $this->Cidade = $cidade;
     }
-    function set_pais($pais) {
-        $this->pais = $pais;
+    public function get_cidade() {
+        return $this->cidade;
     }
-    function set_telefone($telefone) {
-        $this->telefone = $telefone;
+    public function set_cep($cep) {
+        $this->CEP = $cep;
+    }
+    public function get_cep() {
+        return $this->cep;
+    }
+    public function set_pais($pais) {
+        $this->Pais = $pais;
+    }
+    public function get_pais() {
+        return $this->pais;
+    }
+    public function set_telefone($telefone) {
+        $this->Telefone = $telefone;
+    }
+    public function get_telefone() {
+        return $this->telefone;
     }
 }
 ?>
