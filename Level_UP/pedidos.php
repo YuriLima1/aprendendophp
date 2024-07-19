@@ -42,9 +42,8 @@ if( $result->num_rows > 0)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedido | Level UP</title>
-    <link rel="stylesheet" href="Style/style.css" type="text/css">
-    <link rel="stylesheet" href="CSS/estilos.css" type="text/css">
     <link rel="shortcut icon" href="multimidia/Pedido.png" type="image/x-icon">
+    <link rel="stylesheet" href="Style/style.css" type="text/css">
 </head>
 <body>
 

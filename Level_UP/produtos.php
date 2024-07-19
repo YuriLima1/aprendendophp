@@ -28,8 +28,8 @@ if (isset($_POST['register'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos | Level UP</title>
-    <link rel="stylesheet" href="Style/style.css" type="text/css">
     <link rel="shortcut icon" href="multimidia/Produto.png" type="image/x-icon">
+    <link rel="stylesheet" href="Style/style.css" type="text/css">
 </head>
 <body>
     
