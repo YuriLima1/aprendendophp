@@ -1,4 +1,10 @@
 <?php
+
+
+
+
+
+
 // Verificar se foi enviado dados via POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = (isset($_POST["id"]) && $_POST["id"] != null) ? $_POST["id"] : "";
@@ -12,6 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = NULL;
     $celular = NULL;
 }
+
+// Cria a conexão com o banco de dados
 try {
     $conexao = new PDO("mysql:host=localhost; dbname=crudsimples", "root", "");
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -20,6 +28,7 @@ try {
     echo "Erro na conexão:" . $erro->getMessage();
 }
 
+// Bloco if que Salva os dados no Banco = atua como Create e Update
 if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $nome != "") {
     try {
         if ($id != "") {
@@ -50,6 +59,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $nome != "") {
     }
 }
 
+// Bloco if que recupera as informações no formulário, etapa utilizada pelo Update
 if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "upd" && $id != "") {
     try {
         $stmt = $conexao->prepare("SELECT * FROM contatos WHERE id = ?");
@@ -68,6 +78,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "upd" && $id != "") {
     }
 }
 
+// Bloco if utilizado pela etapa Delete
 if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
     try {
         $stmt = $conexao->prepare("DELETE FROM contatos WHERE id = ?");
