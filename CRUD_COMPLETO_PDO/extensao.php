@@ -1,10 +1,4 @@
 <?php
-
-
-
-
-
-
 // Verificar se foi enviado dados via POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = (isset($_POST["id"]) && $_POST["id"] != null) ? $_POST["id"] : "";
