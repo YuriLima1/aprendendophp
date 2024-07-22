@@ -1,19 +1,19 @@
 <?php
-// Verificar se foi enviado dados via POST
+// Verificar se foi enviado dados via POST.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = (isset($_POST["id"]) && $_POST["id"] != null) ? $_POST["id"] : "";
     $nome = (isset($_POST["nome"]) && $_POST["nome"] != null) ? $_POST["nome"] : "";
     $email = (isset($_POST["email"]) && $_POST["email"] != null) ? $_POST["email"] : "";
     $celular = (isset($_POST["celular"]) && $_POST["celular"] != null) ? $_POST["celular"] : NULL;
 } else if (!isset($id)) {
-    // Se não foi setado nenhum valor para a variável $id
+    // Se não foi setado nenhum valor para a variável $id.
     $id = (isset($_GET["id"]) && $_GET["id"] != null) ? $_GET["id"] : "";
     $nome = NULL;
     $email = NULL;
     $celular = NULL;
 }
 
-// Cria a conexão com o banco de dados
+// Cria a conexão com o banco de dados.
 try {
     $conexao = new PDO("mysql:host=localhost; dbname=crudsimples", "root", "");
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,7 +22,7 @@ try {
     echo "Erro na conexão:" . $erro->getMessage();
 }
 
-// Bloco if que Salva os dados no Banco = atua como Create e Update
+// Bloco if que Salva os dados no Banco = atua como Create e Update.
 if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $nome != "") {
     try {
         if ($id != "") {
@@ -53,7 +53,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $nome != "") {
     }
 }
 
-// Bloco if que recupera as informações no formulário, etapa utilizada pelo Update
+// Bloco if que recupera as informações no formulário, etapa utilizada pelo Update.
 if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "upd" && $id != "") {
     try {
         $stmt = $conexao->prepare("SELECT * FROM contatos WHERE id = ?");
@@ -72,7 +72,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "upd" && $id != "") {
     }
 }
 
-// Bloco if utilizado pela etapa Delete
+// Bloco if utilizado pela etapa Delete.
 if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
     try {
         $stmt = $conexao->prepare("DELETE FROM contatos WHERE id = ?");
@@ -99,37 +99,38 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
             <h1>Agenda de Contatos</h1>
             <hr>
             <input type="hidden" name="id" <?php
-            // Preenche o id no campo id com um valor "value"
+            // Preenche o id no campo id com um valor "value".
             if (isset($id) && $id != null || $id != "") {
                 echo "value=\"{$id}\"";
             } 
             ?> />
             Nome:
             <input type="text" name="nome" <?php
-            // Preenche o nome no campo com um valor "value" 
+            // Preenche o nome no campo com um valor "value".
             if (isset($nome) && $nome != null || $nome != "") {
                 echo "value=\" {$nome}\"";
             }
             ?> />
             E-mail:
             <input type="text" name="email" <?php
-            // Preenche o email no campo email com um valor "value" 
+            // Preenche o email no campo email com um valor "value".
             if (isset($email) && $email != null || $email != "") {
                 echo "value=\"{$email}\""; 
             }
             ?> />
             Celular:
             <input type="text" name="celular" <?php
-            // Preenche o celular no campo celular com um valor "value"
+            // Preenche o celular no campo celular com um valor "value".
             if (isset($celular) && $celular != null || $celular !="") {
                 echo "value=\"{$celular}\"";
             } 
             ?> />
+            <!-- Cria um botão clicavel chamado: (Salvar) e (Novo). -->
             <input type="submit" value="Salvar" />
             <input type="reset" value="Novo" /> 
             <hr>
         </form>
-
+        <!-- Cria uma tabela com quatro colunas. -->
         <table border="1" width="100%">
             <tr>
                 <th>Nome</th>
@@ -139,7 +140,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
             </tr>
 
             <?php
-            // Bloco que realiza o pael do Read - recupera os dados e apresenta na tela
+            // Bloco que realiza o papel do Read - recupera os dados e apresenta na tela.
             try {
                 $stmt = $conexao->prepare("SELECT * FROM contatos");
                     if ($stmt->execute()) {
