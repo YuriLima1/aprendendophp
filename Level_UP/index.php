@@ -5,71 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Level UP & Lan House</title>
     <link rel="shortcut icon" href="multimidia/Inicio.png" type="image/x-icon">
-    <link rel="stylesheet" href="Style/style.css" type="text/css">
-    <style>
-        * {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="estilos/estilos.css">
+
 </head>
+
+<style>
+
+body {
+  background-color: gray;
+}
+
+#titulo {
+  text-align: center;
+  font-style: italic;
+}
+
+#intro {
+    text-align: center, justify;
+    font-size: 30px;
+}
+
+#link1, #link2, #link3 {
+  color: black;
+  font-size: 30px;
+  font-style: italic;
+}
+
+#field {
+  border-color: black;
+  border-radius: 35px;
+  border-width: 5px;
+  background-color: white;
+}
+
+</style>
+
 <body>
-    <?php
-    require_once 'header.php'; 
-    ?>
 
-    <header class="cabeca">
+<?php
+include_once 'header.php';
+?>
 
-    <h3> Home </h3>
+<legend> <h1 id="titulo"> BEM VINDO A LOJA DE JOGOS COMPANY HOUSE </h1> </legend>
+<fieldset id='field'>
 
-    <hr>
+<p id="intro">Aqui nos trabalhamos ao maximo para dar o melhor atendimento para nossos clientes
+e fornecemos os melhores jogos da regiao. Agradecemos aqueles que escolheram a nossa loja</p>
 
-    <h2> BEM-VINDO AO LEVEL UP </h2>
+<h2>Logo abaixo estão as apginas para criar seu cadastro, selecionar seu jogo e confirmar o pedido</h2>
 
-    <a href="cliente.php"> CRIE SEU FORMULARIO AQUI </a> <br>
+<br>
 
-    <a href="produtos.php"> SELECIONE SEU PRODUTO </a> <br>
+<a href="cliente.php" id="link1"> CRIE SEU CADASTRO AQUI </a>  <br>
+<br>
+<a href="produtos.php" id="link2"> SELECIONE SEU PRODUTO AQUI </a> <br>
+<br>
+<a href="pedidos.php" id="link3"> CONFIRME AS INFORMAÇÕES DE ENTREGA AQUI </a> <br>
 
-    <a href="pedidos.php"> FINALIZE SEU PEDIDO AQUI</a> <br>
+</fieldset>
 
-    </header>
-
-    <main id="main">
-        <hr> </hr>
-        <h3>Sobre nós</h3>
-
-      <p>Nós somos uma empresa nacional que está localizada em território do estado islâmico, nós trabalhamos com a premissa de trazermos melhor conforto e atendimento aos nossos clientes. Nós fazemos entregas para todos os países e continentes, com Entrega Express feita pelos nossos próprios entregadores, tal como a Kabalixinikov (Empresa de fretes).</p>
-        <p>A Level UP tem como seu principal objetivo, a facilidade de ter os melhores jogos na palma da sua mão, no conforto de sua casa</p>
-        <p> Chega de burocracia e tempo perdido com um atendimento chato, venha para a Level UP e pague mais barato!</p>
-       
-        <h4>Produtos em Destaque</h4>
-
-        <div class="carousel">
-  <input type="radio" name="carousel" id="slide1" checked>
-  <input type="radio" name="carousel" id="slide2">
-  <input type="radio" name="carousel" id="slide3">
-  <div class="slides">
-    <div class="slide">
-      <img src="multimidia/prod1.png" alt="Slide 1">
-    </div>
-    <div class="slide">
-      <img src="multimidia/prod2.png" alt="Slide 2">
-    </div>
-    <div class="slide">
-      <img src="multimidia/prod3.png" alt="Slide 3">
-    </div>
-  </div>
-  <div class="navigation">
-    <label for="slide1"></label>
-    <label for="slide2"></label>
-    <label for="slide3"></label>
-  </div>
-  
 </div>
-</main>
+
+<br>
+<br>
+<br>
+
+<?php
+include_once 'footer.php';
+?>
     
-    <?php
-    require_once 'footer.php';
-    ?>
   
 </body>
 </html>
