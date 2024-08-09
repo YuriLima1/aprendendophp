@@ -1,16 +1,19 @@
 <style>
+    h1 {
+        color: white;
+        font-size: 50px;
+    }
     header{
-        
-        margin: 0;
-        padding: 0;
+    background-color: orange;
+    text-align: center;
+    padding: 24px;
+    margin-top: -21px;
+    margin-left: -8px;
+    margin-right: -8px;
+    border-style: solid;
+    border-width: medium;
     }
 </style>
 <header>
-        <ul class="nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="cliente.php"><strong>+</strong> Cliente</a></li>
-            <li><a href="pedidos.php">Pedido</a></li>
-            <li><a href="produtos.php"><strong>+</strong> Produto</a></li>
-            <li><a href="prateleira.php">Prateleira</a></li>
-        </ul>
+        <h1> Itapira Games </h1>
 </header>
