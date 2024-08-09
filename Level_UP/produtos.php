@@ -64,7 +64,11 @@ include_once 'header.php';
 
 <form action="" method="post" name="register">
 <fieldset>
+<<<<<<< HEAD
     <legend>Selecione o seu produto:</legend>
+=======
+    <legend>SELECIONE SEU PRODUTO</legend>
+>>>>>>> c3d46659954eb5d047c6520066a84e4e51006334
 
 <div class="text_prod">
     <img src="multimidia/vanguard.webp" alt="vanguard" id="prod_itens">
@@ -96,12 +100,20 @@ include_once 'header.php';
         if (isset($_POST['register'])) {
 
             if (empty($_POST['jogos'])) {
+<<<<<<< HEAD
                 echo "Por favor selecione pelo menos um produto";
+=======
+                echo "Por favor selecione pelo menor um produto";
+>>>>>>> c3d46659954eb5d047c6520066a84e4e51006334
             } else {
         
                 $iten_name = $_POST['jogos'];
         
+<<<<<<< HEAD
                 $sql = "INSERT INTO pedidos (iten_name) VALUES ('$iten_name')";
+=======
+                $sql = "INSERT INTO pedidos (iten_name) VALUES ('$jogos')";
+>>>>>>> c3d46659954eb5d047c6520066a84e4e51006334
         
                 if ($con->query($sql) === TRUE) {
                     echo "Produto escolhido com sucesso";
