@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano de Nascimento</title> <!-- O texto vai aparecer na aba do navegador. -->
+</head>
+<body>
+    <form id="formidd">
+        <label for="anonasc">Digite o ano de nascimento:</label>
+        <br>
+        <input type="date" id="data_publicacao" name="data_publicacao">
+        <br>
+        <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado"></div>
+    <script>
+        
+            var anosvivos = anoatual - anonasc;
+            var mesesvivos = anosvivos * 12;
+            var diasvivos = anosvivos * 365; 
+
+            resultadodiv.innerHTML = "<p>Idade: " + anosvivos + " anos</p>";
+            resultadodiv.innerHTML += "<p>Dias vivos: " + diasvivos + " dias</p>";
+            resultadodiv.innerHTML += "<p>Meses vivos: " + mesesvivos + " meses</p>";
+    </script>
+
+</body>
+</html>

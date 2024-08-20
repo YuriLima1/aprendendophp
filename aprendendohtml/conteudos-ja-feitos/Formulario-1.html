@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Livros</title>
+</head>
+<body style="background-color: sienna";>
+    <div style="color: #000";>
+    <h1>Formulário de Livros</h1>
+    <form action="processar_dados.php" method="POST">
+        <fieldset>
+            <legend>Informações do Livro</legend>
+            <label for="titulo">Título do Livro:</label><br>
+            <input type="text" id="titulo" name="titulo" required><br>
+
+            <label>Autor:</label><br>
+            <input type="text" id="autor1" name="autor" required>
+            <input type="text" id="autor2" name="autor">
+            <input type="text" id="autor3" name="autor">
+            <br>
+
+            <label>Ano de Publicação:</label><br>
+            <input type="number" id="ano" name="ano" min="1800" max="2024" required><br>
+
+            <label for="editora">Editora:</label><br>
+            <input type="text" id="editora" name="editora" required><br>
+
+            <label>Gênero:</label><br>
+            <select id="genero" name="genero">
+                <option value="ficcao">Ficção</option>
+                <option value="naoficcao">Não Ficção</option>
+                <option value="romance">Romance</option>
+                <option value="fantasia">Fantasia</option>
+                <option value="aventura">Aventura</option>
+            </select><br>
+
+            <label for="preco">Preço:</label><br>
+            <input type="number" id="preco" name="preco" step="0.01" min="0" required><br>
+
+            <label>Disponibilidade:</label><br>
+            <input type="radio" id="disponivel" name="disponibilidade" value="disponivel" checked>
+            <label for="disponivel">Disponível</label><br>
+            <input type="radio" id="indisponivel" name="disponibilidade" value="indisponivel">
+            <label for="indisponivel">Indisponível</label><br>
+
+            <label>Condição:</label><br>
+            <input type="checkbox" id="novo" name="condicao" value="novo">
+            <label for="novo">Novo</label><br>
+            <input type="checkbox" id="usado" name="condicao" value="usado">
+            <label for="usado">Usado</label><br>
+
+            <label for="descricao">Descrição:</label><br>
+            <textarea id="descricao" name="descricao"></textarea><br>
+
+            <label for="imagem">Imagem:</label><br>
+            <input type="file" id="imagem" name="imagem"><br>
+
+            <label for="quantidade">Quantidade:</label><br>
+            <input type="number" id="quantidade" name="quantidade" min="1" value="1"><br>
+
+            <label for="data_publicacao">Data de Publicação:</label><br>
+            <input type="date" id="data_publicacao" name="data_publicacao"><br>
+
+            <label for="avaliacao">Avaliação:</label><br>
+            <input type="range" id="avaliacao" name="avaliacao" min="1" max="5" step="1" value="3"><br>
+
+            <label for="linguagem">Idioma:</label><br>
+            <input list="linguagens" id="linguagem" name="linguagem">
+            <datalist id="linguagens">
+                <option value="Português">
+                <option value="Inglês">
+                <option value="Espanhol">
+                <option value="Francês">
+            </datalist><br>
+
+            <label for="formato">Formato:</label><br>
+            <select id="formato" name="formato">
+                <optgroup label="Formatos">
+                    <option value="fisico">Físico</option>
+                    <option value="digital">Digital</option>
+                </optgroup>
+            </select><br>
+
+            <label for="comentarios">Comentários:</label><br>
+            <textarea id="comentarios" name="comentarios"></textarea><br>
+
+            <label for="arquivo">Enviar Arquivo:</label><br>
+            <input type="file" id="arquivo" name="arquivo"><br>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+        </fieldset>
+    </form> 
+</body>
+</html>
